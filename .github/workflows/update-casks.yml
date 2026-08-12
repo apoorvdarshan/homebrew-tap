@@ -1,4 +1,4 @@
-name: Update Casks
+name: Update Homebrew Packages
 
 on:
   schedule:
@@ -31,12 +31,12 @@ jobs:
 
       - name: Commit updates
         run: |
-          if git diff --quiet -- Casks; then
-            echo "Casks are already current."
+          if git diff --quiet -- Casks Formula; then
+            echo "Homebrew packages are already current."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Casks
-          git commit -m "chore: update casks"
+          git add Casks Formula
+          git commit -m "chore: update Homebrew packages"
           git push

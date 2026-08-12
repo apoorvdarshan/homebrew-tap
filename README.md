@@ -1,24 +1,28 @@
 # Apoorv Darshan's Homebrew Tap
 
-Signed and notarized macOS releases for open-source apps by
+Homebrew packages for open-source apps and tools by
 [Apoorv Darshan](https://github.com/apoorvdarshan).
 
 ## Install
 
-Install a single Cask directly; Homebrew adds the tap automatically:
+Install a package directly; Homebrew adds the tap automatically:
 
 ```bash
+brew install apoorvdarshan/tap/crossposter
 brew install --cask apoorvdarshan/tap/tethershot
 brew install --cask apoorvdarshan/tap/browser-cookie-bridge
 ```
 
-Both Casks install their application into `/Applications`. They use immutable
-GitHub Release assets with SHA-256 verification.
+Crossposter installs a production Node.js CLI and supports
+`brew services start crossposter`. Its publishing data remains outside the
+Homebrew prefix. Both Casks install their application into `/Applications` and
+use immutable GitHub Release assets with SHA-256 verification.
 
 ## Upgrade
 
 ```bash
 brew update
+brew upgrade crossposter
 brew upgrade --cask --greedy tethershot browser-cookie-bridge
 ```
 
@@ -29,6 +33,7 @@ upgrade.
 ## Uninstall
 
 ```bash
+brew uninstall crossposter
 brew uninstall --cask tethershot
 ```
 
@@ -41,9 +46,10 @@ brew uninstall --zap --cask browser-cookie-bridge
 
 ## Maintenance
 
-The tap checks upstream GitHub Releases every six hours and updates Cask
-versions and SHA-256 digests when a stable release changes. Every push is
-audited with Homebrew's style, audit, and livecheck commands.
+The tap checks upstream npm and GitHub releases every six hours and updates
+Formula/Cask versions and SHA-256 digests when a stable release changes. Every
+push is audited with Homebrew's style, audit, livecheck, and runtime tests.
 
+- [Crossposter](https://github.com/apoorvdarshan/crossposter)
 - [TetherShot](https://github.com/apoorvdarshan/TetherShot)
 - [Browser Cookie Bridge](https://github.com/apoorvdarshan/browser-cookie-bridge)
