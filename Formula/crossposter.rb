@@ -20,6 +20,8 @@ class Crossposter < Formula
     ENV["NEXT_TELEMETRY_DISABLED"] = "1"
     system "npm", "install", *std_npm_args(prefix: false)
     system formula_opt_bin("node")/"npm", "run", "build"
+    system "npm", "prune", "--omit=dev"
+    rm_r buildpath/".next/cache"
     libexec.install Dir["*"]
     libexec.install ".next"
 
