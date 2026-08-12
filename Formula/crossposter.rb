@@ -1,8 +1,8 @@
 class Crossposter < Formula
   desc "Local-first social publishing dashboard for accounts you control"
   homepage "https://crossposter.apoorvdarshan.com/"
-  url "https://registry.npmjs.org/@apoorvdarshan/crossposter/-/crossposter-1.1.13.tgz"
-  sha256 "4f90056d0908e5659822e2efa5dc5c643dd86f592693778af76c4c42985a2af1"
+  url "https://registry.npmjs.org/@apoorvdarshan/crossposter/-/crossposter-1.1.14.tgz"
+  sha256 "6f22463cfed44e7fbb13b4e93099e1d7e2f900b635587ce54454112fe9e246db"
   license "MIT"
 
   livecheck do
