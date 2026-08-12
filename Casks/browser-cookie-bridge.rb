@@ -8,7 +8,7 @@ cask "browser-cookie-bridge" do
   url "https://github.com/apoorvdarshan/browser-cookie-bridge/releases/download/v#{version}/Browser-Cookie-Bridge-#{arch}.dmg",
       verified: "github.com/apoorvdarshan/browser-cookie-bridge/"
   name "Browser Cookie Bridge"
-  desc "Transfer browser cookies and sessions locally on macOS"
+  desc "Transfer browser cookies and signed-in sessions locally"
   homepage "https://cookiebridge.apoorvdarshan.com/"
 
   livecheck do
@@ -17,7 +17,7 @@ cask "browser-cookie-bridge" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Browser Cookie Bridge.app"
 

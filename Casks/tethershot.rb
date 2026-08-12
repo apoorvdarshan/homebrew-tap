@@ -5,7 +5,7 @@ cask "tethershot" do
   url "https://github.com/apoorvdarshan/TetherShot/releases/download/v#{version}/TetherShot-#{version}-universal.dmg",
       verified: "github.com/apoorvdarshan/TetherShot/"
   name "TetherShot"
-  desc "Capture pixel-perfect iPhone screenshots from macOS"
+  desc "Capture pixel-perfect iPhone screenshots"
   homepage "https://tethershot.apoorvdarshan.com/"
 
   livecheck do
@@ -14,7 +14,7 @@ cask "tethershot" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "TetherShot.app"
 
