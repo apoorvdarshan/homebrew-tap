@@ -17,12 +17,11 @@ class Crossposter < Formula
   depends_on "python@3.14"
 
   def install
-    system "npm", "install", *std_npm_args
-
-    package_root = libexec/"lib/node_modules/@apoorvdarshan/crossposter"
-    cd package_root do
-      system formula_opt_bin("node")/"npm", "run", "build"
-    end
+    ENV["NEXT_TELEMETRY_DISABLED"] = "1"
+    system "npm", "install", *std_npm_args(prefix: false)
+    system formula_opt_bin("node")/"npm", "run", "build"
+    libexec.install Dir["*"]
+    libexec.install ".next"
 
     (bin/"crossposter").write <<~SH
       #!/bin/bash
@@ -37,7 +36,7 @@ class Crossposter < Formula
       fi
 
       mkdir -p "$CROSSPOSTER_DATA_DIR"
-      export CROSSPOSTER_APP_ROOT="#{opt_libexec}/lib/node_modules/@apoorvdarshan/crossposter"
+      export CROSSPOSTER_APP_ROOT="#{opt_libexec}"
       export CROSSPOSTER_BREW_EXECUTABLE="#{HOMEBREW_PREFIX}/bin/brew"
       export CROSSPOSTER_DATA_DIR
       export CROSSPOSTER_INSTALL_SOURCE="homebrew"
@@ -46,7 +45,7 @@ class Crossposter < Formula
       export POSTER_ENABLE_CONFIG_UI="true"
 
       exec "#{formula_opt_bin("node")}/node" \
-        "#{opt_libexec}/lib/node_modules/@apoorvdarshan/crossposter/bin/crossposter.mjs" "$@"
+        "#{opt_libexec}/bin/crossposter.mjs" "$@"
     SH
   end
 
