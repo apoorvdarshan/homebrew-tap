@@ -1,0 +1,29 @@
+name: Audit Casks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: macos-15
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v6
+
+      - name: Register local tap
+        run: brew tap apoorvdarshan/tap "$GITHUB_WORKSPACE"
+
+      - name: Check cask style
+        run: brew style --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
+
+      - name: Audit casks
+        run: brew audit --strict --online --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
+
+      - name: Check latest releases
+        run: brew livecheck --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
