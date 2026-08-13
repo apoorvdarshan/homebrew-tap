@@ -1,9 +1,9 @@
 cask "browser-cookie-bridge" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.4.2"
-  sha256 arm:   "e98af86845f4ee9dc1819a89739fcb0a331fa0b09319874966cf5a7586d66b89",
-         intel: "fdd579cf0cb9f2769f5817c1e83ac284017cd9695cd7a381ca540df339637b46"
+  version "1.4.3"
+  sha256 arm:   "1d8ff073b423a6521a3457290b95713848459e522af0e30519cedbc76e284e7d",
+         intel: "3ba85e0380be23d5c1da9d55e9dc0c946b66af842320d117dee27cd730d2e09a"
 
   url "https://github.com/apoorvdarshan/browser-cookie-bridge/releases/download/v#{version}/Browser-Cookie-Bridge-#{arch}.dmg",
       verified: "github.com/apoorvdarshan/browser-cookie-bridge/"
