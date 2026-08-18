@@ -21,24 +21,11 @@ jobs:
       - name: Register local tap
         run: brew tap apoorvdarshan/tap "$GITHUB_WORKSPACE"
 
-      - name: Check package style
-        run: brew style --formula apoorvdarshan/tap/crossposter
-
       - name: Check cask style
         run: brew style --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
-
-      - name: Audit formula
-        run: brew audit --strict --online --formula apoorvdarshan/tap/crossposter
 
       - name: Audit casks
         run: brew audit --strict --online --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
 
       - name: Check latest releases
-        run: |
-          brew livecheck --formula apoorvdarshan/tap/crossposter
-          brew livecheck --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
-
-      - name: Install and test Crossposter
-        run: |
-          brew install --formula apoorvdarshan/tap/crossposter
-          brew test apoorvdarshan/tap/crossposter
+        run: brew livecheck --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge

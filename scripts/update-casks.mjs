@@ -84,37 +84,6 @@ for (const project of projects) {
   }
 }
 
-const npmPackage = "@apoorvdarshan/crossposter";
-const npmMetadata = await getJSON(
-  "https://registry.npmjs.org/@apoorvdarshan%2fcrossposter/latest",
-  { "User-Agent": headers["User-Agent"] },
-);
-const npmVersion = npmMetadata.version?.match(/^(\d+\.\d+\.\d+)$/)?.[1];
-const npmTarball = npmMetadata.dist?.tarball;
-if (!npmVersion || !npmTarball) {
-  throw new Error(`${npmPackage} latest npm release is not a stable semantic version`);
-}
-
-const npmDigest = await urlSHA256(npmTarball);
-const formulaPath = resolve(root, "Formula/crossposter.rb");
-const formulaBefore = await readFile(formulaPath, "utf8");
-const formulaAfter = replaceOnce(
-  replaceOnce(
-    formulaBefore,
-    /url "https:\/\/registry\.npmjs\.org\/@apoorvdarshan\/crossposter\/-\/crossposter-[^"]+\.tgz"/,
-    `url "${npmTarball}"`,
-  ),
-  /sha256 "[a-f0-9]{64}"/,
-  `sha256 "${npmDigest}"`,
-);
-if (formulaAfter !== formulaBefore) {
-  await writeFile(formulaPath, formulaAfter);
-  changed = true;
-  console.log(`Updated Formula/crossposter.rb to ${npmVersion}`);
-} else {
-  console.log(`Formula/crossposter.rb is current at ${npmVersion}`);
-}
-
 console.log(changed ? "Homebrew package updates written." : "All packages are already current.");
 
 async function getJSON(url, requestHeaders = headers) {
@@ -137,18 +106,6 @@ async function assetSHA256(asset) {
   });
   if (!response.ok || !response.body) {
     throw new Error(`Could not download ${asset.name} for hashing`);
-  }
-
-  return streamSHA256(response.body);
-}
-
-async function urlSHA256(url) {
-  const response = await fetch(url, {
-    headers: { "User-Agent": headers["User-Agent"] },
-    redirect: "follow",
-  });
-  if (!response.ok || !response.body) {
-    throw new Error(`Could not download ${url} for hashing`);
   }
 
   return streamSHA256(response.body);
