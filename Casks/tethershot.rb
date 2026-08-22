@@ -1,6 +1,6 @@
 cask "tethershot" do
-  version "1.0.8"
-  sha256 "39b258e10f143341fe7da0fa6d32bc8d07876a7add7953a201654da177c8ce5b"
+  version "1.0.9"
+  sha256 "2a964b4ee9065cae609bb7da870b9e8a059b0cc6f2249943a2f2c8125ce3f560"
 
   url "https://github.com/apoorvdarshan/TetherShot/releases/download/v#{version}/TetherShot-#{version}-universal.dmg",
       verified: "github.com/apoorvdarshan/TetherShot/"
