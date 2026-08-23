@@ -16,7 +16,7 @@ if (process.env.GITHUB_TOKEN) {
 
 const projects = [
   {
-    repository: "apoorvdarshan/TetherShot",
+    repository: "aopv/TetherShot",
     cask: "Casks/tethershot.rb",
     assets(version) {
       return {
@@ -32,7 +32,7 @@ const projects = [
     },
   },
   {
-    repository: "apoorvdarshan/browser-cookie-bridge",
+    repository: "aopv/browser-cookie-bridge",
     cask: "Casks/browser-cookie-bridge.rb",
     assets() {
       return {
