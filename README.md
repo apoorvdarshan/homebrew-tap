@@ -1,15 +1,15 @@
 # Apoorv Darshan's Homebrew Tap
 
 Homebrew packages for open-source apps and tools by
-[Apoorv Darshan](https://github.com/aopv).
+[Apoorv Darshan](https://github.com/apoorvdarshan).
 
 ## Install
 
 Install a package directly; Homebrew adds the tap automatically:
 
 ```bash
-brew install --cask aopv/tap/tethershot
-brew install --cask aopv/tap/browser-cookie-bridge
+brew install --cask apoorvdarshan/tap/tethershot
+brew install --cask apoorvdarshan/tap/browser-cookie-bridge
 ```
 
 Both Casks install their application into `/Applications` and use immutable
@@ -45,5 +45,5 @@ The tap checks upstream GitHub releases every six hours and updates Cask
 versions and SHA-256 digests when a stable release changes. Every push is
 audited with Homebrew's style, audit, and livecheck checks.
 
-- [TetherShot](https://github.com/aopv/TetherShot)
-- [Browser Cookie Bridge](https://github.com/aopv/browser-cookie-bridge)
+- [TetherShot](https://github.com/apoorvdarshan/TetherShot)
+- [Browser Cookie Bridge](https://github.com/apoorvdarshan/browser-cookie-bridge)

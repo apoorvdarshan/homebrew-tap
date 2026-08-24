@@ -19,13 +19,13 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Register local tap
-        run: brew tap aopv/tap "$GITHUB_WORKSPACE"
+        run: brew tap apoorvdarshan/tap "$GITHUB_WORKSPACE"
 
       - name: Check cask style
-        run: brew style --cask aopv/tap/tethershot aopv/tap/browser-cookie-bridge
+        run: brew style --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
 
       - name: Audit casks
-        run: brew audit --strict --online --cask aopv/tap/tethershot aopv/tap/browser-cookie-bridge
+        run: brew audit --strict --online --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
 
       - name: Check latest releases
-        run: brew livecheck --cask aopv/tap/tethershot aopv/tap/browser-cookie-bridge
+        run: brew livecheck --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
