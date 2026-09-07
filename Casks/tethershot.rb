@@ -2,8 +2,7 @@ cask "tethershot" do
   version "1.0.17"
   sha256 "843334be957b1e7aeaaba64ce6c87ef5d9bdff806f8cb665b5a5de105832994d"
 
-  url "https://github.com/apoorvdarshan/TetherShot/releases/download/v#{version}/TetherShot-#{version}-universal.dmg",
-      verified: "github.com/apoorvdarshan/TetherShot/"
+  url "https://github.com/apoorvdarshan/TetherShot/releases/download/v#{version}/TetherShot-#{version}-universal.dmg"
   name "TetherShot"
   desc "Capture pixel-perfect iPhone screenshots"
   homepage "https://tethershot.apoorvdarshan.com/"

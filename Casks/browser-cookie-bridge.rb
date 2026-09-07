@@ -5,8 +5,7 @@ cask "browser-cookie-bridge" do
   sha256 arm:   "756dbf6909d42472452e8c497e17dae35dc84e438b9b611ca487b3e8d15dea94",
          intel: "9cdd896b2c0d3ab94dba4ec7ac14dc52a2ae5c3cfe87707431f7e533a88bbd06"
 
-  url "https://github.com/apoorvdarshan/browser-cookie-bridge/releases/download/v#{version}/Browser-Cookie-Bridge-#{arch}.dmg",
-      verified: "github.com/apoorvdarshan/browser-cookie-bridge/"
+  url "https://github.com/apoorvdarshan/browser-cookie-bridge/releases/download/v#{version}/Browser-Cookie-Bridge-#{arch}.dmg"
   name "Browser Cookie Bridge"
   desc "Transfer browser cookies and signed-in sessions locally"
   homepage "https://cookiebridge.apoorvdarshan.com/"
