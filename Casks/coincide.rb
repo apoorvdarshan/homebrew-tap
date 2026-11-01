@@ -1,6 +1,6 @@
 cask "coincide" do
   version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "b4bb4fe1c2e6c8d504d09c4bfd5aadf8309df1b4eab69e66155b213bf7e65ce5"
 
   url "https://github.com/apoorvdarshan/coincide/releases/download/v#{version}/Coincide-#{version}.dmg"
   name "Coincide"
