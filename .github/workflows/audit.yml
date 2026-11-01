@@ -21,6 +21,10 @@ jobs:
       - name: Register local tap
         run: brew tap apoorvdarshan/tap "$GITHUB_WORKSPACE"
 
+      # Homebrew refuses to load casks from a third-party tap until it is trusted.
+      - name: Trust local tap
+        run: brew trust apoorvdarshan/tap
+
       - name: Check cask style
         run: brew style --cask apoorvdarshan/tap/coincide apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
 
