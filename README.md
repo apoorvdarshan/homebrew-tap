@@ -8,18 +8,19 @@ Homebrew packages for open-source apps and tools by
 Install a package directly; Homebrew adds the tap automatically:
 
 ```bash
+brew install --cask apoorvdarshan/tap/coincide
 brew install --cask apoorvdarshan/tap/tethershot
 brew install --cask apoorvdarshan/tap/browser-cookie-bridge
 ```
 
-Both Casks install their application into `/Applications` and use immutable
+The Casks install their application into `/Applications` and use immutable
 GitHub Release assets with SHA-256 verification.
 
 ## Upgrade
 
 ```bash
 brew update
-brew upgrade --cask --greedy tethershot browser-cookie-bridge
+brew upgrade --cask --greedy coincide tethershot browser-cookie-bridge
 ```
 
 The apps also include their own signed update checkers. Homebrew marks them as
@@ -42,8 +43,10 @@ brew uninstall --zap --cask browser-cookie-bridge
 ## Maintenance
 
 The tap checks upstream GitHub releases every six hours and updates Cask
-versions and SHA-256 digests when a stable release changes. Every push is
+versions and SHA-256 digests when a stable release changes. Coincide's own
+release workflow updates its Cask when it publishes a release. Every push is
 audited with Homebrew's style, audit, and livecheck checks.
 
+- [Coincide](https://github.com/apoorvdarshan/coincide)
 - [TetherShot](https://github.com/apoorvdarshan/TetherShot)
 - [Browser Cookie Bridge](https://github.com/apoorvdarshan/browser-cookie-bridge)
