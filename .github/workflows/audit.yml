@@ -28,12 +28,8 @@ jobs:
       - name: Check cask style
         run: brew style --cask apoorvdarshan/tap/coincide apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
 
-      # Offline until Coincide's first release exists; then move it to the online audit and livecheck below.
-      - name: Audit the Coincide cask
-        run: brew audit --strict --cask apoorvdarshan/tap/coincide
-
       - name: Audit casks
-        run: brew audit --strict --online --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
+        run: brew audit --strict --online --cask apoorvdarshan/tap/coincide apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
 
       - name: Check latest releases
-        run: brew livecheck --cask apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
+        run: brew livecheck --cask apoorvdarshan/tap/coincide apoorvdarshan/tap/tethershot apoorvdarshan/tap/browser-cookie-bridge
